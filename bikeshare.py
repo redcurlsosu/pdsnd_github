@@ -24,7 +24,7 @@ def get_filters():
         city = input('What city would you like to see data for? Choose Chicago, New York City, or Washington:  ').lower()
         if city in CITIES:
             break
-    #get user input for month (all, january, february, ... , june)
+    #get user input for month (january, february, ... , june)
     print()
     while True:
         month = input('What month would you like to see data for? Choose January, February, March, April, May,  or June:  ').lower()
@@ -32,7 +32,7 @@ def get_filters():
             break
     print()
 
-    # get user input for day of week (all, nday, tuesday, ... sunday)
+    # get user input for day of week (monday, tuesday,)
     while True:
         day = input('What day would you like to see data for? Choose Monday, Tuesday, Wednesday, Thursday, or Friday:  ').lower()
         if day in DAYS:
@@ -172,13 +172,13 @@ def display_raw_data(df):
     # displays raw data at user request
     r=0
     # initial user input
-    raw_data = input('\nWould you like see 5 rows of raw data? Enter yes or no.\n')
+    raw_data = input('\nWould you like see 10 rows of raw data? Enter yes or no.\n')
     while raw_data.lower() =='yes':
-        print(df.iloc[r:r+5])
+        print(df.iloc[r:r+10])
         # advance to next 5 rows
-        r += 5
+        r += 10
         # continue by user?
-        raw_data = input('\nWould you like see 5 more rows of raw data? Enter yes or no.\n')
+        raw_data = input('\nWould you like see 10 more rows of raw data? Enter yes or no.\n')
         print('-'*40)
 
 def main():
