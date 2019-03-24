@@ -20,22 +20,22 @@ def get_filters():
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
     print('Hello! Let\'s take a look at some US bikeshare data!')
-    # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
+    #get user input for city (chicago, new york city, washington).
     while True:
-        city = input('What city would you like to see data for? choose chicago, new york city, or washington:  ').lower()
+        city = input('What city would you like to see data for? Choose Chicago, New York City, or Washington:  ').lower()
         if city in CITIES:
             break
-    # TO DO: get user input for month (all, january, february, ... , june)
+    #get user input for month (january, february, ... , june)
     print()
     while True:
-        month = input('What month would you like to see data for? january, february, march, april, may, june:  ').lower()
+        month = input('What month would you like to see data for? Choose January, February, March, April, May,  or June:  ').lower()
         if month in MONTHS:
             break
     print()
 
     # TO DO: get user input for day of week (all, nday, tuesday, ... sunday)
     while True:
-        day = input('What day would you like to see data for? monday, tuesday, wednesday, thursday, friday:  ').lower()
+        day = input('What day would you like to see data for? Choose Monday, Tuesday, Wednesday, Thursday, or Friday:  ').lower()
         if day in DAYS:
             break
     print()
@@ -67,6 +67,7 @@ def load_data(city, month, day):
 
     return df
 
+
 #calculate data and statistics
 def time_stats(df):
     """Displays statistics on the most frequent times of travel."""
@@ -74,15 +75,15 @@ def time_stats(df):
     print('\nCalculating The Most Frequent Times of Travel...\n')
     start_time = time.time()
 
-    # TO DO: display the most common month
+    #display the most common month
     common_month= df['month'].mode()[0]
     print("Most popular start month: ", common_month)
 
-    # TO DO: display the most common day of week
+    # display the most common day of week
     common_day = df['day'].mode()[0]
     print("Most popular start day: ", common_day)
 
-    # TO DO: display the most common start hour
+    # display the most common start hour
     common_hour = df['hour'].mode()[0]
     print("Most popular start hour: ", common_hour)
 
@@ -96,15 +97,15 @@ def station_stats(df):
     print('\nCalculating The Most Popular Stations and Trip...\n')
     start_time = time.time()
 
-    # TO DO: display most commonly used start station
+    #  display most commonly used start station
     most_common_start_station = df['Start Station'].value_counts().idxmax()
     print("Most popular start station: ", most_common_start_station)
 
-    # TO DO: display most commonly used end station
+    #  display most commonly used end station
     most_common_end_station = df['End Station'].value_counts().idxmax()
     print("Most popular end station: ", most_common_end_station)
 
-    # TO DO: display most frequent combination of start station and end station trip
+    #  display most frequent combination of start station and end station trip
     most_comon_start_start_station = df[['Start Station','End Station']].mode()
     print("Most popular start & end station: ",most_common_end_station, " and ", most_common_end_station)
 
@@ -118,11 +119,11 @@ def trip_duration_stats(df):
     print('\nCalculating Trip Duration...\n')
     start_time = time.time()
 
-    # TO DO: display total travel time
+    # display total travel time
     duration_sum = df['Trip Duration'].sum()
     print("Total trip duration: ", duration_sum)
 
-    # TO DO: display mean travel time
+    # display mean travel time
     duration_mean = df['Trip Duration'].mean()
     print("Most common trip duration: ", duration_mean)
 
@@ -136,7 +137,7 @@ def user_stats(df):
     print('\nCalculating User Stats...\n')
     start_time = time.time()
 
-    # TO DO: Display counts of user types
+    # Display counts of user types
 
     print("Customers vs. Subscribers:\n")
     user_counts = df['User Type'].value_counts()
@@ -152,7 +153,7 @@ def user_stats(df):
             print("  {}: {}".format(gender_counts.index[index], gender_count))
             print()
 
-    # TO DO: Display earliest, most recent, and most common year of birth
+    # Display earliest, most recent, and most common year of birth
     print("Users by birth year:\n")
     if 'Birth Year' in df.columns:
         birth_year = df['Birth Year']
@@ -173,13 +174,13 @@ def display_raw_data(df):
     # displays raw data at user request
     r=0
     # initial user input
-    raw_data = input('\nWould you like see 5 rows of raw data? Enter yes or no.\n')
+    raw_data = input('\nWould you like see 10 rows of raw data? Enter yes or no.\n')
     while raw_data.lower() =='yes':
-        print(df.iloc[r:r+5])
+        print(df.iloc[r:r+10])
         # advance to next 5 rows
-        r += 5
+        r += 10
         # continue by user?
-        raw_data = input('\nWould you like see 5 more rows of raw data? Enter yes or no.\n')
+        raw_data = input('\nWould you like see 10 more rows of raw data? Enter yes or no.\n')
         print('-'*40)
 
 def main():
