@@ -5,7 +5,7 @@
 Bikeshare Python Project
 
 ### Description
-
+Allows users to navigate bikeshare data from 3 US cities
 
 ### Files used
 bikeshare.py
