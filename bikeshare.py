@@ -9,6 +9,7 @@ CITIES = [ 'chicago','new york city','washington']
 MONTHS = ['january', 'february','march','april','may','june']
 DAYS = ['sunday','monday','tuesday','wednesday','thursday','friday','saturday']
 
+# user input variables
 def get_filters():
     """
     Asks user to specify a city, month, and day to analyze.
@@ -41,7 +42,7 @@ def get_filters():
     print('-'*40)
     return city, month, day
 
-
+#load data
 def load_data(city, month, day):
     """
     Loads data for the specified city and filters by month and day if applicable.
@@ -66,7 +67,7 @@ def load_data(city, month, day):
 
     return df
 
-
+#calculate data and statistics
 def time_stats(df):
     """Displays statistics on the most frequent times of travel."""
 
