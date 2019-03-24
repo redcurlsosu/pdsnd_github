@@ -21,20 +21,20 @@ def get_filters():
     print('Hello! Let\'s take a look at some US bikeshare data!')
     #get user input for city (chicago, new york city, washington).
     while True:
-        city = input('What city would you like to see data for? choose chicago, new york city, or washington:  ').lower()
+        city = input('What city would you like to see data for? Choose Chicago, New York City, or Washington:  ').lower()
         if city in CITIES:
             break
     #get user input for month (all, january, february, ... , june)
     print()
     while True:
-        month = input('What month would you like to see data for? january, february, march, april, may, june:  ').lower()
+        month = input('What month would you like to see data for? Choose January, February, March, April, May,  or June:  ').lower()
         if month in MONTHS:
             break
     print()
 
     # get user input for day of week (all, nday, tuesday, ... sunday)
     while True:
-        day = input('What day would you like to see data for? monday, tuesday, wednesday, thursday, friday:  ').lower()
+        day = input('What day would you like to see data for? Choose Monday, Tuesday, Wednesday, Thursday, or Friday:  ').lower()
         if day in DAYS:
             break
     print()
