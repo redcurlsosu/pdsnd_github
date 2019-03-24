@@ -8,7 +8,10 @@ Bikeshare Python Project
 
 
 ### Files used
-
+bikeshare.py
+chicago.csv
+new_york_city.csv
+washington.csv
 
 ### Credits
 Thank you to the Udacity Programing for Data Science Course!
